@@ -1,6 +1,7 @@
 package database.c347.soi.rp.edu.sg.recyclerview.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import database.c347.soi.rp.edu.sg.recyclerview.Activity.FirstActivity;
 import database.c347.soi.rp.edu.sg.recyclerview.HorizontalModel;
 import database.c347.soi.rp.edu.sg.recyclerview.R;
 import database.c347.soi.rp.edu.sg.recyclerview.VerticalModel;
@@ -37,7 +39,7 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
     @Override
     public void onBindViewHolder(@NonNull VerticalRVViewHolder holder, int position) {
         final VerticalModel verticalModel = arrayList.get(position);
-        String title = verticalModel.getTitle();
+        final String title = verticalModel.getTitle();
         ArrayList<HorizontalModel> singleItem = verticalModel.getArrayList();
 
         holder.tvTitle.setText(title);
@@ -50,7 +52,10 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
         holder.btnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, verticalModel.getTitle(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, verticalModel.getTitle(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context, FirstActivity.class);
+                i.putExtra("title", title);
+                context.startActivity(i);
             }
         });
     }

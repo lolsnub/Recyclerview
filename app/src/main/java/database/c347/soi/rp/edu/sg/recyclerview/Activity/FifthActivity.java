@@ -77,13 +77,15 @@ public class FifthActivity extends AppCompatActivity {
         verticalModel.setTitle(name);
         ArrayList<HorizontalModel> arrayListHorizontal = new ArrayList<>();
         int k = 1;
-        for(int j=0; j<imgArray.length; j++){
+        for(int j=0; j<5; j++){
             HorizontalModel horizontalModel = new HorizontalModel();
-            if(k<9){
-                horizontalModel.setName(name + " : 0" +k);
-            } else {
-                horizontalModel.setName(name + " : " +k);
-            }
+            horizontalModel.setName(name + " : 0" +k);
+
+//            if(k<9){
+//                horizontalModel.setName(name + " : 0" +k);
+//            } else {
+//                horizontalModel.setName(name + " : " +k);
+//            }
             horizontalModel.setDescription("Description: " +j);
             horizontalModel.setImg(imgArray[j]);
             arrayListHorizontal.add(horizontalModel);

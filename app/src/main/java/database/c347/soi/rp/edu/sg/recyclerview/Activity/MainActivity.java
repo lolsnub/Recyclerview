@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         ELVlist.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-                if(listHash.get(listDataHeader.get(i)).get(i1).equals("Grid 3x3")){
-                    nextActivity(FirstActivity.class, "Grid 3x3");
-                }
+//                if(listHash.get(listDataHeader.get(i)).get(i1).equals("Grid 3x3")){
+//                    nextActivity(FirstActivity.class, "Grid 3x3");
+//                }
                 if(listHash.get(listDataHeader.get(i)).get(i1).equals("Grid 3x3 Different Layout")){
                     nextActivity(SecondActivity.class, "Grid 3x3 Different Layout");
                 }
@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(listHash.get(listDataHeader.get(i)).get(i1).equals("Profile Design 2")){
                     nextActivity(SixthActivity.class, "Profile Design 2");
+                }
+                if(listHash.get(listDataHeader.get(i)).get(i1).equals("Countdown")){
+                    nextActivity(SeventhActivity.class, "Countdown");
                 }
                 return true;
             }
@@ -103,29 +106,26 @@ public class MainActivity extends AppCompatActivity {
         listDataHeader = new ArrayList<>();
         listHash = new HashMap<>();
 
+        listDataHeader.add("Portfolio");
         listDataHeader.add("Recyclerview");
         listDataHeader.add("Firebase");
-        listDataHeader.add("Menu 3");
 
         List<String> title1 = new ArrayList<>();
         List<String> title2 = new ArrayList<>();
         List<String> title3 = new ArrayList<>();
 
-        title1.add("Grid 2x2");
-        title1.add("Grid 3x3");
-        title1.add("Grid 3x3 Different Layout");
-        title1.add("Profile Design");
         title1.add("Nested RecyclerView");
+        title1.add("Profile Design");
         title1.add("Profile Design 2");
 
-        title2.add("RealTime Firebase");
-        title2.add("FireStore");
-        title2.add("OTP");
+        title2.add("Grid 2x2");
+//        title1.add("Grid 3x3");
+        title2.add("Grid 3x3 Different Layout");
+        title2.add("Countdown");
 
-        title3.add("Sub Item 1");
-        title3.add("Sub Item 2");
-        title3.add("Sub Item 3");
-        title3.add("Sub Item 4");
+        title3.add("Simple Chat");
+        title3.add("Revision note");
+        title3.add("OTP");
 
         listHash.put(listDataHeader.get(0), title1);
         listHash.put(listDataHeader.get(1), title2);

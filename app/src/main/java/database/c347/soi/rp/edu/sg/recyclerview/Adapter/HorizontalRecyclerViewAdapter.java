@@ -37,12 +37,12 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
         final HorizontalModel horizontalModel = arrayList.get(position);
         holder.tvTitle.setText(horizontalModel.getName());
         holder.ivThumb.setImageResource(horizontalModel.getImg());
-        holder.ivThumb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context,horizontalModel.getName(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        holder.ivThumb.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(context,horizontalModel.getName(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
@@ -58,7 +58,7 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
         public HorizontalRVViewHolder(View itemView){
             super(itemView);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
-            ivThumb = (ImageView) itemView.findViewById(R.id.ivThumb);
+            ivThumb = (ImageView) itemView.findViewById(R.id.ivThumbImg);
         }
 
     }
